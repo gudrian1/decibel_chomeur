@@ -1,0 +1,6 @@
+io/flutter/plugins/GeneratedPluginRegistrant.java
+ io.flutter.plugins.GeneratedPluginRegistrant
+com/example/decibel_chomeur/BuildConfig.java
+ com.example.decibel_chomeur.BuildConfig
+com/example/decibel_chomeur/MainActivity.java
+ com.example.decibel_chomeur.MainActivity
