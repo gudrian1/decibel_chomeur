@@ -9,13 +9,6 @@ double? getValue;
 class NoiseListen extends StatefulWidget {
   @override
   _NoiseListenState createState() => _NoiseListenState();
-
-  @override
-  Widget build(BuildContext context) {
-    return const Scaffold(
-      body:ThirdRoute(),
-    );
-  }
 }
 
 class _NoiseListenState extends State<NoiseListen> {
@@ -48,6 +41,8 @@ class _NoiseListenState extends State<NoiseListen> {
 
   void start() async {
     try {
+      //possible problème ici suite à une attente du programme.
+      //await Future.delayed(Duration(seconds: 3));
       _noiseSubscription = _noiseMeter.noiseStream.listen(onData);
     } catch (e) {
       print(e);
@@ -71,9 +66,39 @@ class _NoiseListenState extends State<NoiseListen> {
 
   @override
   Widget build(BuildContext context) {
-    // ignore: prefer_const_constructors
+    // ICI FAIRE LA PARTIE D'HENRI
     return Scaffold(
-      body: ThirdRoute(),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        label: Text(_isRecording ? 'Stop' : 'Start'),
+        onPressed: _isRecording ? stop : start,
+        icon: !_isRecording ? Icon(Icons.circle) : null,
+        backgroundColor: _isRecording ? Colors.red : Colors.green,
+      ),
+      body: Container(
+        child: Column(
+          children: [
+            Expanded(
+              flex: 2,
+              child: Center(
+                child: Text(
+                  maxDB != null ? maxDB!.toStringAsFixed(2) : 'Press start',
+                ),
+              ),
+            ),
+            Text(
+              meanDB != null
+                  ? 'Mean: ${meanDB!.toStringAsFixed(2)}'
+                  : 'Awaiting data',
+              style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
+            ),
+
+            SizedBox(
+              height: 68,
+            ),
+          ],
+        ),
+      ),
     );
     // TODO: implement build
     throw UnimplementedError();
