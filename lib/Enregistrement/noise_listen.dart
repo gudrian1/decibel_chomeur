@@ -73,7 +73,6 @@ class _NoiseListenState extends State<NoiseListen> {
         label: Text(_isRecording ? 'Stop' : 'Start'),
         onPressed: _isRecording ? stop : start,
         icon: !_isRecording ? Icon(Icons.circle) : null,
-        backgroundColor: _isRecording ? Colors.red : Colors.green,
       ),
       body: Container(
         child: Column(
@@ -82,17 +81,10 @@ class _NoiseListenState extends State<NoiseListen> {
               flex: 2,
               child: Center(
                 child: Text(
-                  maxDB != null ? maxDB!.toStringAsFixed(2) : 'Press start',
+                  meanDB != null ? meanDB!.toStringAsFixed(2) : 'Decibel',
                 ),
               ),
             ),
-            Text(
-              meanDB != null
-                  ? 'Mean: ${meanDB!.toStringAsFixed(2)}'
-                  : 'Awaiting data',
-              style: TextStyle(fontWeight: FontWeight.w300, fontSize: 14),
-            ),
-
             SizedBox(
               height: 68,
             ),
