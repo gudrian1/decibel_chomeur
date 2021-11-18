@@ -3,8 +3,11 @@ import 'package:chomeurs/Enregistrement/enregistrements.dart';
 import 'package:chomeurs/datadisplay.dart';
 import 'package:flutter/material.dart';
 import 'package:noise_meter/noise_meter.dart';
+import 'package:flutter/scheduler.dart';
 
 double? getValue;
+var cptStart = 0;
+var cptStop = 0;
 
 class NoiseListen extends StatefulWidget {
   @override
@@ -44,6 +47,7 @@ class _NoiseListenState extends State<NoiseListen> {
       //possible problème ici suite à une attente du programme.
       //await Future.delayed(Duration(seconds: 3));
       _noiseSubscription = _noiseMeter.noiseStream.listen(onData);
+      cptStart ++;
     } catch (e) {
       print(e);
     }
@@ -55,6 +59,8 @@ class _NoiseListenState extends State<NoiseListen> {
       _noiseSubscription = null;
 
       this.setState(() => this._isRecording = false);
+      cptStop++;
+      Navigator.of(context).pushNamed("ThirdRoute");
     } catch (e) {
       print('stopRecorder error: $e');
     }
@@ -71,7 +77,7 @@ class _NoiseListenState extends State<NoiseListen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         label: Text(_isRecording ? 'Stop' : 'Start'),
-        onPressed: _isRecording ? stop : start,
+        onPressed: cptStart == 1 ? stop : start,
         icon: !_isRecording ? Icon(Icons.circle) : null,
       ),
       body: Container(
