@@ -1,0 +1,11 @@
+.idea
+android
+build
+test
+
+.flutter-plugins
+.flutter-plugins-dependencies
+.metadata
+.packages
+analysis_options
+decibel_chomeur
