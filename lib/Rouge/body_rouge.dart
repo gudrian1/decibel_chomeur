@@ -29,7 +29,7 @@ class _BodyRougeState extends State<BodyRouge> {
               child: Text(
                 "C\'est un message d'alerte… qui arrive bien tard ! En effet, les seuils de danger pour l\'audition et de détection de "
                 "la douleur sont séparés de 40 dB environ."
-                "Nous vous conseillons de vous en écarter afin de préserver votre santé.",
+                " Nous vous conseillons de vous en écarter afin de préserver votre santé.",
                 textAlign: TextAlign.justify,
                 style: TextStyle(
                   fontSize: 18,
