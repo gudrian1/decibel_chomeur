@@ -87,17 +87,6 @@ class _NoiseListenState extends State<NoiseListen> {
       body: Container(
         child: Column(
           children: [
-            Expanded(
-              flex: 2,
-              child: Center(
-                child: Text(
-                  meanDB != null ? getMeanDB()!.toStringAsFixed(2) : 'Valeur nulle',
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 68,
-            ),
             PageOrg()
           ],
         ),
