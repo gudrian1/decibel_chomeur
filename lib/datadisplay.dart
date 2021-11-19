@@ -1,5 +1,3 @@
-import 'dart:async';
-import 'dart:math';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 import './Enregistrement/noise_listen.dart';
@@ -28,49 +26,49 @@ SoundDescription (dB) {
   var comment = "comment";
   String dBstring = dB.toStringAsFixed(2);
   if (dB < 10) {
-    comment = "hmmm, " + dBstring + " Décibels ? C'est à peine le bruit d'une respiration...";
+    comment = "hmmm, " + dBstring + " Décibels ?\nC'est à peine le bruit d'une respiration...";
   }
   else if (dB < 20) {
-    comment = "ooooh, " + dBstring + " Décibels ? On entendrait le bruissement des feuilles...";
+    comment = "ooooh, " + dBstring + " Décibels ?\nOn entendrait le bruissement des feuilles...";
   }
   else if (dB < 30) {
-    comment = "Ah, " + dBstring + " Décibels ? C'est comme se ballader dans un voisinage rurale plutôt calme.";
+    comment = "Ah, " + dBstring + " Décibels ?\nC'est comme se ballader dans un voisinage rurale plutôt calme.";
   }
   else if (dB < 40) {
-    comment = "C'est sympa " + dBstring + " Décibels ? C'est comme les chants des oiseaux !";
+    comment = "C'est sympa " + dBstring + " Décibels ?\nC'est comme les chants des oiseaux !";
   }
   else if (dB < 50) {
-    comment = "hmm, " + dBstring + " Décibels ? Parler dans son appartement est aussi fort.";
+    comment = "hmm, " + dBstring + " Décibels ?\nParler dans son appartement est aussi fort.";
   }
   else if (dB < 60) {
-    comment = "Eeeh " + dBstring + " Décibels ? On dirait des bureaux bruillants";
+    comment = "Eeeh " + dBstring + " Décibels ?\nOn dirait des bureaux bruillants";
   }
   else if (dB < 70) {
-    comment = "Ahrr, " + dBstring + " Décibels ? Un bruit d'aspirateur peut déranger certaines personnes.";
+    comment = "Ahrr, " + dBstring + " Décibels ?\nUn bruit d'aspirateur peut déranger certaines personnes.";
   }
   else if (dB < 80) {
-    comment = "Ouah " + dBstring + " Décibels ? Le mixeur peut faire beaucoup de bruit.";
+    comment = "Ouah " + dBstring + " Décibels ?\nLe mixeur peut faire beaucoup de bruit.";
   }
   else if (dB < 90) {
-    comment = "Ah, " + dBstring + " Décibels ? C'est comme une tondeuse électrique.";
+    comment = "Ah, " + dBstring + " Décibels ?\nC'est comme une tondeuse électrique.";
   }
   else if (dB < 100) {
-    comment = "Oh la, " + dBstring + " Décibels ? Une exposition prolongé d'un bruit de marteau-piqueur peut endommager votre ouïe.";
+    comment = "Oh la, " + dBstring + " Décibels ?\nUne exposition prolongé d'un bruit de \nmarteau-piqueur peut endommager votre ouïe.";
   }
   else if (dB < 110) {
-    comment = "Ouah " + dBstring + " Décibels ? On dirait un concert de rock!";
+    comment = "Ouah " + dBstring + " Décibels ?\nOn dirait un concert de rock!";
   }
   else if (dB < 120) {
-    comment = "Euh " + dBstring + " Décibels ? Ca va ? C'était un coups de foudre ?";
+    comment = "Euh " + dBstring + " Décibels ?\nCa va ? C'était un coups de foudre ?";
   }
   else if (dB < 130) {
-    comment = "... " + dBstring + " Décibels ? Vous êtes à 20 mètre d'un avion militaire au décolage ?";
+    comment = "... " + dBstring + " Décibels ?\nVous êtes à 20 mètre d'un avion militaire au décolage ?";
   }
   else if (dB < 140) {
-    comment = "Hmmm, " + dBstring + " Décibels ? Vous êtes sur un pont de porte avion ? J'espère que vous avez le droit d'y être. ";
+    comment = "Hmmm, " + dBstring + " Décibels ?\nVous êtes sur un pont de porte avion ?\n J'espère que vous avez le droit d'y être. ";
   }
   else {
-    comment = "..." + dBstring + " Décibels ? Vos tympans sont toujours là ?";
+    comment = "..." + dBstring + " Décibels ?\nVos tympans sont toujours là ?";
   }
   return comment;
 }
