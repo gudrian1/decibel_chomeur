@@ -4,6 +4,7 @@ import 'package:chomeurs/datadisplay.dart';
 import 'package:flutter/material.dart';
 import 'package:noise_meter/noise_meter.dart';
 import 'package:flutter/scheduler.dart';
+import '../datadisplay.dart';
 
 double? getValue;
 var cptStart = 0;
@@ -67,12 +68,15 @@ class _NoiseListenState extends State<NoiseListen> {
   }
 
   double? getMeanDB(){
-    return getValue;
+    if (getValue != null) {
+      return getValue;
+    }
+    return 0.00;
   }
 
   @override
   Widget build(BuildContext context) {
-    // ICI FAIRE LA PARTIE D'HENRI
+
     return Scaffold(
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
@@ -87,13 +91,14 @@ class _NoiseListenState extends State<NoiseListen> {
               flex: 2,
               child: Center(
                 child: Text(
-                  meanDB != null ? meanDB!.toStringAsFixed(2) : 'Decibel',
+                  meanDB != null ? getMeanDB()!.toStringAsFixed(2) : 'Valeur nulle',
                 ),
               ),
             ),
             SizedBox(
               height: 68,
             ),
+            PageOrg()
           ],
         ),
       ),
