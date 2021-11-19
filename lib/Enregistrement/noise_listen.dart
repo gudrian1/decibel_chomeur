@@ -7,8 +7,8 @@ import 'package:flutter/scheduler.dart';
 import '../datadisplay.dart';
 
 double? getValue = 0.00;
-var cptStart = 0;
-var cptStop = 0;
+//var cptStart = 0;
+//var cptStop = 0;
 
 class NoiseListen extends StatefulWidget {
   @override
@@ -48,7 +48,7 @@ class _NoiseListenState extends State<NoiseListen> {
       //possible problème ici suite à une attente du programme.
       //await Future.delayed(Duration(seconds: 3));
       _noiseSubscription = _noiseMeter.noiseStream.listen(onData);
-      cptStart ++;
+      //cptStart ++;
     } catch (e) {
       print(e);
     }
@@ -60,7 +60,7 @@ class _NoiseListenState extends State<NoiseListen> {
       _noiseSubscription = null;
 
       this.setState(() => this._isRecording = false);
-      cptStop++;
+      //cptStop++;
       Navigator.of(context).pushNamed("ThirdRoute");
     } catch (e) {
       print('stopRecorder error: $e');
@@ -81,7 +81,7 @@ class _NoiseListenState extends State<NoiseListen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       floatingActionButton: FloatingActionButton.extended(
         label: Text(_isRecording ? 'Stop' : 'Start'),
-        onPressed: cptStart == 1 ? stop : start,
+        onPressed: _isRecording ? stop : start,
         icon: !_isRecording ? Icon(Icons.circle) : null,
       ),
       body: Container(
