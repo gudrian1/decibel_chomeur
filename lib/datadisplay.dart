@@ -26,7 +26,7 @@ class ThirdRoute extends StatelessWidget {
 
 SoundDescription (dB) {
   var comment = "comment";
-  String dBstring = dB.toStringAsFixed(1);
+  String dBstring = dB.toStringAsFixed(2);
   if (dB < 10) {
     comment = "hmmm, " + dBstring + " Décibels ? C'est à peine le bruit d'une respiration...";
   }
@@ -134,7 +134,7 @@ class PageOrg extends StatelessWidget {
     ],
     ))
         ),
-        //SoundDisplay(),
+        SoundDisplay(),
         ButtonApres(),
       ],
     );
@@ -145,7 +145,7 @@ class SoundDisplay extends StatelessWidget {
   const SoundDisplay({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    String getSoundLevel = SoundDescription(12.0);
+    String getSoundLevel = SoundDescription(getValue!);
     var displaySound = Text(getSoundLevel);
     return Container(child: displaySound);
   }
