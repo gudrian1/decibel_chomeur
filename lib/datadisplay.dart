@@ -109,7 +109,9 @@ class PageOrg extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         LogoSmall(),
-
+        SizedBox(
+          height: 40,
+        ),
         Center(
         child: Container(
         child: SfRadialGauge(
@@ -166,7 +168,8 @@ class ButtonApres extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ButtonStyle style =
-    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Color(0xFFC2C4B9),padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0));
+    ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20), primary: Color(0xFFC2C4B9),padding: const EdgeInsets.symmetric(horizontal: 18.0, vertical: 14.0), shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(8)));
 
     return Center(
       child: Column(
