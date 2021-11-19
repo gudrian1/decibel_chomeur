@@ -101,7 +101,7 @@ class PageOrg extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var dbValue = valeur!;
-    String dbValueAsString = valeur!.toStringAsFixed(2);
+    //String dbValueAsString = valeur!.toStringAsFixed(2);
     var pointerColor;
 if (dbValue != null) {
     if (dbValue < 70) {
@@ -137,7 +137,7 @@ if (dbValue != null) {
 
         annotations: <GaugeAnnotation>[
         GaugeAnnotation(angle: 270, positionFactor: 0.4  ,
-        widget: Text(dbValueAsString, style:
+        widget: Text(getValue!.toStringAsFixed(2), style:
         TextStyle(fontWeight: FontWeight.bold, fontSize: 60),))]
     )
     ],
