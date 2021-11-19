@@ -108,6 +108,9 @@ class PageOrg extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
+        SizedBox(
+          height: 30,
+        ),
         LogoSmall(),
         SizedBox(
           height: 40,
