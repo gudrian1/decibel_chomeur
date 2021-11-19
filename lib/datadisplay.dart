@@ -22,7 +22,6 @@ class ThirdRoute extends StatelessWidget {
   }
 }
 
-double? valeur=getValue;
 
 
 SoundDescription (dB) {
@@ -78,19 +77,15 @@ SoundDescription (dB) {
 
 PageDirection () {
   var page;
-  if (valeur != null) {
-    if (valeur! < 70) {
-      page = PageVert();
-    }
-    else if (valeur!< 90) {
-      page = PageOrange();
-    }
-    else {
-      page = PageRouge();
-    }
+
+  if (getValue! < 70) {
+    page = PageVert();
   }
-   else {
-     var comment = "merde";
+  else if (getValue!< 90) {
+    page = PageOrange();
+  }
+  else {
+    page = PageRouge();
   }
   return page;
 }
@@ -100,22 +95,18 @@ class PageOrg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dbValue = valeur!;
-    //String dbValueAsString = valeur!.toStringAsFixed(2);
     var pointerColor;
-if (dbValue != null) {
-    if (dbValue < 70) {
+
+    if (getValue! < 70) {
       pointerColor = Colors.green;
     }
-    else if (dbValue <= 90) {
+    else if (getValue! <= 90) {
       pointerColor = Colors.orange;
     }
     else {
       pointerColor = Colors.red;
     }
-  } else {
-   var comment = "merde";
-  }
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
@@ -130,7 +121,7 @@ if (dbValue != null) {
         ranges: <GaugeRange>[
         GaugeRange(startValue: 0, endValue: 150, color:(Colors.blueGrey))],
         pointers: <GaugePointer>[RangePointer(
-            value: dbValue, width: 0.1, sizeUnit: GaugeSizeUnit.factor, color: pointerColor,
+            value: getValue!, width: 0.1, sizeUnit: GaugeSizeUnit.factor, color: pointerColor,
             animationType: AnimationType.ease,
             enableAnimation: true, animationDuration: 2000,
             cornerStyle: CornerStyle.bothCurve)],
