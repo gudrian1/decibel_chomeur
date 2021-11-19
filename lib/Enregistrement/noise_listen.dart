@@ -82,7 +82,8 @@ class _NoiseListenState extends State<NoiseListen> {
       floatingActionButton: FloatingActionButton.extended(
         label: Text(_isRecording ? 'Stop' : 'Start'),
         onPressed: _isRecording ? stop : start,
-        icon: !_isRecording ? Icon(Icons.circle) : null,
+        icon: !_isRecording ? const Icon(Icons.circle,color:Color.fromRGBO(194, 196, 185, 100)) : null,
+        backgroundColor: Color.fromRGBO(194, 196, 185, 100),
       ),
       body: Container(
         child: Column(
