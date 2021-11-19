@@ -37,7 +37,7 @@ class _BodyParametres extends State<BodyParametres> {
           children: [
             IconButton(
               iconSize: 50,
-              icon: Image.asset('Icones/coolicon5.png'),
+              icon: Image.asset('assets/Icones/coolicon5.png'),
               tooltip: 'Profil',
               padding: const EdgeInsets.all(10.0),
               onPressed: () {
@@ -48,7 +48,7 @@ class _BodyParametres extends State<BodyParametres> {
               },
             ),
             IconButton(
-              icon: Image.asset('Icones/coolicon6.png'),
+              icon: Image.asset('assets/Icones/coolicon6.png'),
               padding: const EdgeInsets.all(10.0),
               onPressed: () {},
               tooltip: 'Contactez-nous!',
@@ -56,7 +56,7 @@ class _BodyParametres extends State<BodyParametres> {
 
             //const Text("test2"),
             IconButton(
-              icon: Image.asset('Icones/coolicon.png'),
+              icon: Image.asset('assets/Icones/coolicon.png'),
               iconSize: 50,
               onPressed: () {},
               tooltip: 'Suppression des données',
@@ -64,7 +64,7 @@ class _BodyParametres extends State<BodyParametres> {
 
             //const Text("test3"),
             IconButton(
-              icon: Image.asset('Icones/coolicon4.png'),
+              icon: Image.asset('assets/Icones/coolicon4.png'),
               iconSize: 50,
               onPressed: () {},
               tooltip: 'Partagez (:',

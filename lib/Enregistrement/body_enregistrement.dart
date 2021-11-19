@@ -101,12 +101,12 @@ class _BodyEnregistrementState extends State<BodyEnregistrement> {
                   const Text("rec01.mp3"),
                 ],
               ),
-                  /*IconButton(
+                  IconButton(
                     icon: Image.asset('assets/images/rectangle.png'),
                     onPressed: () {},
                     alignment: Alignment.bottomCenter,
 
-                  ),*/
+                  ),
             ],
           ),
         ],
