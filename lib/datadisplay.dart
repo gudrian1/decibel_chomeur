@@ -21,7 +21,10 @@ class ThirdRoute extends StatelessWidget {
 
   }
 }
-//double? valeur=getValue;
+
+double? valeur=getValue;
+
+
 SoundDescription (dB) {
   var comment = "comment";
   String dBstring = dB.toStringAsFixed(1);
@@ -75,11 +78,11 @@ SoundDescription (dB) {
 
 PageDirection () {
   var page;
-  if (50.0/*valeur*/ != null) {
-    if (50.0/*valeur!*/ < 70) {
+  if (valeur != null) {
+    if (valeur! < 70) {
       page = PageVert();
     }
-    else if (50.0/*valeur!*/ < 90) {
+    else if (valeur!< 90) {
       page = PageOrange();
     }
     else {
@@ -97,8 +100,8 @@ class PageOrg extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var dbValue = 50.0;
-    String dbValueAsString = 50.0/*valeur!*/.toStringAsFixed(1);
+    var dbValue = valeur!;
+    String dbValueAsString = valeur!.toStringAsFixed(2);
     var pointerColor;
 if (dbValue != null) {
     if (dbValue < 70) {

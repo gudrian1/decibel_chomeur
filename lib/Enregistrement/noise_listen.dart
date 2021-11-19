@@ -6,7 +6,7 @@ import 'package:noise_meter/noise_meter.dart';
 import 'package:flutter/scheduler.dart';
 import '../datadisplay.dart';
 
-double? getValue;
+double? getValue = 0.00;
 var cptStart = 0;
 var cptStop = 0;
 
