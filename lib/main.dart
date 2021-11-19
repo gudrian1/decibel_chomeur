@@ -7,11 +7,14 @@ import 'package:chomeurs/Orange/page_resultat_orange.dart';
 import 'package:chomeurs/Rouge/page_rouge.dart';
 import 'package:chomeurs/Parametres/parametres.dart';
 import 'package:chomeurs/Profile/page_profile.dart';
+import 'package:flutter/services.dart';
 import 'Accueil/acceuil_enregistrement.dart';
 import 'Accueil/accueil.dart';
 import 'Enregistrement/noise_listen.dart';
 
-void main() => runApp(MyApp());
+void main(){ WidgetsFlutterBinding.ensureInitialized();
+SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp])
+    .then((value) => runApp(MyApp()));}
 //TESSST
 
 class MyApp extends StatelessWidget {
